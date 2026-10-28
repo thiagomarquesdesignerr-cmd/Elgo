@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elgo — opções de marca e layout</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,800;1,9..144,600&family=Unbounded:wght@500;700&family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#141414; --muted:#6b6b6b; --line:#e5e5e2; --bg:#fafaf8; }
+  * { box-sizing: border-box; margin: 0; }
+  body { font-family: Inter, system-ui, sans-serif; background: var(--bg); color: var(--ink); padding: 48px 16px 96px; }
+  .wrap { max-width: 1120px; margin: 0 auto; }
+  h1 { font-size: 30px; letter-spacing: -.02em; }
+  .lead { color: var(--muted); margin-top: 6px; max-width: 640px; line-height: 1.5; }
+  h2 { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 56px 0 16px; }
+  .grid3 { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+  .grid4 { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+  .card-body { padding: 18px 20px 20px; }
+  .tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 4px 8px; border-radius: 6px; background: #f1f1ee; }
+  .name { font-size: 20px; font-weight: 700; margin-top: 10px; }
+  .desc { color: var(--muted); font-size: 14px; line-height: 1.5; margin-top: 6px; }
+  .swatches { display: flex; gap: 8px; margin-top: 14px; }
+  .sw { flex: 1; height: 44px; border-radius: 8px; border: 1px solid rgba(0,0,0,.06); display: flex; align-items: flex-end; padding: 5px 7px; font: 500 10px/1 Inter; }
+  .type { margin-top: 14px; font-size: 13px; color: var(--muted); }
+  .hero { height: 220px; display: grid; place-items: center; position: relative; }
+  .mini-ui { position: absolute; left: 16px; right: 16px; bottom: 14px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; }
+  .btn { padding: 7px 12px; border-radius: 999px; font-weight: 600; font-size: 12px; }
+  /* layouts */
+  .frame { height: 300px; background: #fff; border-bottom: 1px solid var(--line); padding: 12px; overflow: hidden; font-family: Inter; }
+  .bar { height: 8px; border-radius: 3px; background: #e9e9e6; }
+  .img { background: #d9dde3; border-radius: 4px; }
+  .t { height: 9px; border-radius: 2px; background: #2a2a2a; }
+  .p { height: 5px; border-radius: 2px; background: #cfcfcb; margin-top: 4px; }
+  .nav { height: 16px; border-radius: 3px; background: #0b5394; margin: 8px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Elgo: opções para você escolher</h1>
+  <p class="lead">Nada disso está aplicado ainda. Escolha uma identidade visual para a plataforma e quais layouts os clientes vão poder usar nos portais deles.</p>
+
+  <h2>1 · Identidade visual da Elgo</h2>
+  <div class="grid3">
+
+    <!-- A: Pulso -->
+    <div class="card">
+      <div class="hero" style="background:#0E0F14;color:#fff">
+        <div style="display:flex;align-items:center;gap:14px">
+          <svg width="56" height="56" viewBox="0 0 56 56"><rect width="56" height="56" rx="14" fill="#2F5BFF"/><text x="28" y="38" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="32" fill="#fff">e</text><circle cx="44" cy="12" r="5" fill="#B8FF3B"/></svg>
+          <span style="font-family:'Space Grotesk';font-weight:700;font-size:56px;letter-spacing:-.04em">elgo</span>
+        </div>
+        <div class="mini-ui"><span style="opacity:.6">Notícia no ar, agora.</span><span class="btn" style="background:#2F5BFF">Criar portal</span></div>
+      </div>
+      <div class="card-body">
+        <span class="tag">A · Pulso</span>
+        <p class="name">Tecnológica e ao vivo</p>
+        <p class="desc">Azul elétrico com um ponto verde de “no ar”. Passa a ideia de velocidade e de plataforma moderna, tipo startup.</p>
+        <div class="swatches">
+          <div class="sw" style="background:#0E0F14;color:#fff">#0E0F14</div>
+          <div class="sw" style="background:#2F5BFF;color:#fff">#2F5BFF</div>
+          <div class="sw" style="background:#B8FF3B">#B8FF3B</div>
+          <div class="sw" style="background:#F5F5F2">#F5F5F2</div>
+        </div>
+        <p class="type">Tipografia: <b style="font-family:'Space Grotesk'">Space Grotesk</b> + Inter</p>
+      </div>
+    </div>
+
+    <!-- B: Tinta -->
+    <div class="card">
+      <div class="hero" style="background:#F4EFE6;color:#1A1714">
+        <div style="display:flex;align-items:center;gap:12px">
+          <svg width="56" height="56" viewBox="0 0 56 56"><circle cx="28" cy="28" r="28" fill="#FF4A1C"/><text x="28" y="39" text-anchor="middle" font-family="Fraunces" font-style="italic" font-weight="600" font-size="34" fill="#F4EFE6">e</text></svg>
+          <span style="font-family:Fraunces;font-weight:800;font-size:58px;letter-spacing:-.03em">Elgo</span>
+        </div>
+        <div class="mini-ui"><span style="color:#7a6f63">Jornalismo com casa própria.</span><span class="btn" style="background:#1A1714;color:#F4EFE6">Criar portal</span></div>
+      </div>
+      <div class="card-body">
+        <span class="tag">B · Tinta</span>
+        <p class="name">Editorial e calorosa</p>
+        <p class="desc">Serifa marcante com laranja-tomate sobre papel creme. Conversa direto com jornalistas e tem cara de redação.</p>
+        <div class="swatches">
+          <div class="sw" style="background:#1A1714;color:#fff">#1A1714</div>
+          <div class="sw" style="background:#FF4A1C;color:#fff">#FF4A1C</div>
+          <div class="sw" style="background:#F4EFE6">#F4EFE6</div>
+          <div class="sw" style="background:#2E5E4E;color:#fff">#2E5E4E</div>
+        </div>
+        <p class="type">Tipografia: <b style="font-family:Fraunces">Fraunces</b> + Inter</p>
+      </div>
+    </div>
+
+    <!-- C: Sinal -->
+    <div class="card">
+      <div class="hero" style="background:#D4FF3A;color:#0B0B0F">
+        <div style="display:flex;align-items:center;gap:12px">
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="#0B0B0F" stroke-width="6" stroke-linecap="round"><circle cx="16" cy="40" r="5" fill="#0B0B0F" stroke="none"/><path d="M16 26a14 14 0 0 1 14 14"/><path d="M16 12a28 28 0 0 1 28 28"/></svg>
+          <span style="font-family:Unbounded;font-weight:700;font-size:50px;letter-spacing:-.03em">elgo</span>
+        </div>
+        <div class="mini-ui"><span>Seu portal transmitindo.</span><span class="btn" style="background:#0B0B0F;color:#D4FF3A">Criar portal</span></div>
+      </div>
+      <div class="card-body">
+        <span class="tag">C · Sinal</span>
+        <p class="name">Ousada e jovem</p>
+        <p class="desc">Verde-limão com um símbolo de transmissão. Chama muita atenção e foge do visual tradicional de mídia.</p>
+        <div class="swatches">
+          <div class="sw" style="background:#0B0B0F;color:#fff">#0B0B0F</div>
+          <div class="sw" style="background:#D4FF3A">#D4FF3A</div>
+          <div class="sw" style="background:#6C4CFF;color:#fff">#6C4CFF</div>
+          <div class="sw" style="background:#F2F2F0">#F2F2F0</div>
+        </div>
+        <p class="type">Tipografia: <b style="font-family:Unbounded">Unbounded</b> + Inter</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>2 · Layouts para os portais dos clientes</h2>
+  <div class="grid4">
+
+    <!-- Clássico -->
+    <div class="card">
+      <div class="frame">
+        <div style="text-align:center;font:900 20px 'Source Serif 4'">Diário do Vale</div>
+        <div class="nav"></div>
+        <div style="display:grid;grid-template-columns:2fr 1fr;gap:10px">
+          <div><div class="img" style="height:110px"></div><div class="t" style="margin-top:8px;height:12px"></div><div class="t" style="margin-top:4px;height:12px;width:70%"></div><div class="p"></div></div>
+          <div style="display:grid;gap:10px;align-content:start">
+            <div><div class="t"></div><div class="p"></div><div class="p" style="width:60%"></div></div>
+            <div><div class="t"></div><div class="p"></div><div class="p" style="width:60%"></div></div>
+            <div><div class="t"></div><div class="p"></div><div class="p" style="width:60%"></div></div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px">
+          <div class="img" style="height:50px"></div><div class="img" style="height:50px"></div><div class="img" style="height:50px"></div>
+        </div>
+      </div>
+      <div class="card-body"><span class="tag">Clássico</span><p class="desc">Jornal tradicional: manchete grande, coluna lateral e blocos por editoria. É o que existe hoje.</p></div>
+    </div>
+
+    <!-- Revista -->
+    <div class="card">
+      <div class="frame" style="padding:0">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px"><b style="font:900 15px 'Source Serif 4'">Diário do Vale</b><div class="bar" style="width:90px"></div></div>
+        <div style="height:150px;background:#9aa6b5;position:relative">
+          <div style="position:absolute;left:12px;bottom:12px;right:40px"><div class="t" style="background:#fff;height:13px"></div><div class="t" style="background:#fff;height:13px;width:70%;margin-top:5px"></div></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:12px">
+          <div><div class="img" style="height:60px"></div><div class="t" style="margin-top:6px"></div></div>
+          <div><div class="img" style="height:60px"></div><div class="t" style="margin-top:6px"></div></div>
+          <div><div class="img" style="height:60px"></div><div class="t" style="margin-top:6px"></div></div>
+        </div>
+      </div>
+      <div class="card-body"><span class="tag">Revista</span><p class="desc">Foto gigante de ponta a ponta com o título por cima. Bom pra cultura, esporte e portais com muita imagem.</p></div>
+    </div>
+
+    <!-- Plantão -->
+    <div class="card">
+      <div class="frame">
+        <div style="display:flex;justify-content:space-between;align-items:center"><b style="font:900 15px 'Source Serif 4'">Diário do Vale</b><span style="font:700 9px Inter;color:#fff;background:#d11;padding:3px 6px;border-radius:3px">AO VIVO</span></div>
+        <div class="nav" style="height:10px"></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr;gap:12px">
+          <div style="display:grid;gap:9px">
+            <div style="display:flex;gap:8px"><span style="font:600 9px Inter;color:#888;width:28px">10:42</span><div style="flex:1"><div class="t"></div><div class="p"></div></div></div>
+            <div style="display:flex;gap:8px"><span style="font:600 9px Inter;color:#888;width:28px">10:15</span><div style="flex:1"><div class="t" style="width:80%"></div><div class="p"></div></div></div>
+            <div style="display:flex;gap:8px"><span style="font:600 9px Inter;color:#888;width:28px">09:58</span><div style="flex:1"><div class="t"></div><div class="p" style="width:70%"></div></div></div>
+            <div style="display:flex;gap:8px"><span style="font:600 9px Inter;color:#888;width:28px">09:30</span><div style="flex:1"><div class="t" style="width:90%"></div><div class="p"></div></div></div>
+            <div style="display:flex;gap:8px"><span style="font:600 9px Inter;color:#888;width:28px">09:02</span><div style="flex:1"><div class="t" style="width:75%"></div><div class="p"></div></div></div>
+          </div>
+          <div style="display:grid;gap:8px;align-content:start"><div class="img" style="height:60px"></div><div class="t"></div><div class="p"></div><div class="img" style="height:60px;margin-top:6px"></div></div>
+        </div>
+      </div>
+      <div class="card-body"><span class="tag">Plantão</span><p class="desc">Linha do tempo com horário de cada notícia, a mais nova no topo. Ideal pra notícia local, polícia e política.</p></div>
+    </div>
+
+    <!-- Coluna -->
+    <div class="card">
+      <div class="frame" style="padding:16px 34px">
+        <div style="text-align:center;font:600 italic 17px 'Fraunces'">Diário do Vale</div>
+        <div class="bar" style="width:60%;margin:8px auto 14px;height:5px"></div>
+        <div class="img" style="height:90px"></div>
+        <div class="t" style="margin-top:10px;height:13px"></div><div class="t" style="margin-top:4px;height:13px;width:60%"></div>
+        <div class="p"></div><div class="p" style="width:85%"></div>
+        <div style="border-top:1px solid #eee;margin-top:12px;padding-top:10px"><div class="t" style="height:10px"></div><div class="p"></div></div>
+        <div style="border-top:1px solid #eee;margin-top:10px;padding-top:10px"><div class="t" style="height:10px;width:80%"></div><div class="p"></div></div>
+      </div>
+      <div class="card-body"><span class="tag">Coluna</span><p class="desc">Uma coluna só, letra grande, muito respiro. Pra colunistas, blogs de opinião e newsletters.</p></div>
+    </div>
+  </div>
+
+  <h2>Como o cliente vai escolher</h2>
+  <p class="lead" style="margin-top:0">No painel, em <b>Aparência</b>, o cliente vê os layouts lado a lado, abre uma <b>prévia com as matérias reais dele</b> e só depois clica em <b>Publicar layout</b>. Até lá, o portal no ar não muda.</p>
+</div>
+</body>
+</html>

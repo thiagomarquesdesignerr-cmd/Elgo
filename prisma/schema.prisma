@@ -1,0 +1,73 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Postgres (Neon). DATABASE_URL é a conexão com pooling, usada pelo app;
+// DATABASE_URL_UNPOOLED é a conexão direta, usada pelas migrações.
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DATABASE_URL_UNPOOLED")
+}
+
+model User {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+  portals      Portal[]
+}
+
+// Cada portal é um "inquilino" da plataforma, acessível em <slug>.<dominio-raiz> ou num domínio próprio.
+model Portal {
+  id           String     @id @default(cuid())
+  name         String
+  slug         String     @unique
+  customDomain String?    @unique
+  description  String     @default("")
+  primaryColor String     @default("#c8102e")
+  logoUrl      String?
+  layout       String     @default("classico") // classico | feed | revista | plantao | coluna (ver src/lib/layouts.ts)
+  plan        String     @default("gratis") // gratis | pro | rede
+  ownerId      String
+  owner        User       @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  categories   Category[]
+  articles     Article[]
+  createdAt    DateTime   @default(now())
+}
+
+model Category {
+  id       String    @id @default(cuid())
+  name     String
+  slug     String
+  position Int       @default(0)
+  portalId String
+  portal   Portal    @relation(fields: [portalId], references: [id], onDelete: Cascade)
+  articles Article[]
+
+  @@unique([portalId, slug])
+}
+
+model Article {
+  id          String    @id @default(cuid())
+  title       String
+  slug        String
+  summary     String    @default("")
+  body        String    @default("") // Markdown
+  coverUrl    String?
+  author      String    @default("")
+  status      String    @default("rascunho") // rascunho | publicado
+  featured    Boolean   @default(false)
+  views       Int       @default(0)
+  publishedAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  portalId    String
+  portal      Portal    @relation(fields: [portalId], references: [id], onDelete: Cascade)
+  categoryId  String?
+  category    Category? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+
+  @@unique([portalId, slug])
+  @@index([portalId, status, publishedAt])
+}
